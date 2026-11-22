@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chromatogram evaluation</title>
+  <link rel="stylesheet" href="/node_modules/uplot/dist/uPlot.min.css">
+  <link rel="stylesheet" href="./example.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Chromatogram evaluation</h1>
+        <p>Open a CSV with a time or volume column and signal units in the headers.</p>
+      </div>
+      <label class="upload">Open CSV<input id="csv" type="file" accept=".csv,.asc,.txt"></label>
+    </header>
+    <section aria-labelledby="chart-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="chart-title">Signal</h2>
+          <p id="run-name"></p>
+        </div>
+        <label>Curve <select id="curve"></select></label>
+      </div>
+      <div id="chart"></div>
+    </section>
+    <section aria-labelledby="peak-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="peak-title">Peak integration</h2>
+          <p>Drag either boundary on the chart to recalculate the area.</p>
+        </div>
+        <div class="actions">
+          <button id="preview" type="button">Print preview</button>
+          <button id="export" type="button">Download peak CSV</button>
+        </div>
+      </div>
+      <p id="error" role="status" hidden></p>
+      <table>
+        <thead><tr><th scope="col">Peak</th><th scope="col">Start</th><th scope="col">End</th><th scope="col">Area</th></tr></thead>
+        <tbody><tr><td id="peak-name"></td><td id="peak-start"></td><td id="peak-end"></td><td data-testid="peak-area" id="peak-area"></td></tr></tbody>
+      </table>
+      <p class="revision">Revision <span data-testid="revision" id="revision">0</span></p>
+    </section>
+  </main>
+  <dialog id="print-preview">
+    <div class="section-heading">
+      <h2>Print preview</h2>
+      <form method="dialog" class="actions">
+        <button type="button" id="print">Print</button>
+        <button>Close</button>
+      </form>
+    </div>
+    <iframe id="print-page" title="Chromatogram and selected peak table" sandbox="allow-same-origin allow-modals"></iframe>
+  </dialog>
+  <script src="/node_modules/uplot/dist/uPlot.iife.min.js"></script>
+  <script src="/dist/uplot-chromatography.iife.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "uplot-chromatography",
+  "version": "0.1.0-rc.2",
+  "description": "Chromatography evaluation functions and an interactive plugin for uPlot 1.6.32",
+  "type": "module",
+  "license": "Apache-2.0",
+  "sideEffects": false,
+  "engines": { "node": ">=22.18.0" },
+  "files": ["dist", "README.md", "LICENSE", "LICENSE-MIT", "examples/esm/main.ts"],
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./io": { "types": "./dist/io/index.d.ts", "import": "./dist/io/index.js" },
+    "./uplot": { "types": "./dist/uplot/index.d.ts", "import": "./dist/uplot/index.js" }
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:browser": "playwright test",
+    "test:consumer": "node tests/consumer/install.mjs",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build.mjs",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": { "uplot": "1.6.32" },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "esbuild": "0.25.12",
+    "typescript": "5.9.3",
+    "uplot": "1.6.32"
+  }
+}
