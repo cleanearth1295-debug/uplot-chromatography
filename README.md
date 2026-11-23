@@ -56,4 +56,4 @@ The working TypeScript usage is in [examples/esm/main.ts](examples/esm/main.ts).
 
 ## License
 
-The project is licensed under [Apache 2.0](LICENSE). The original MIT license and copyright notice are included in [LICENSE-MIT](LICENSE-MIT).
+The project is licensed under [Apache 2.0](LICENSE).

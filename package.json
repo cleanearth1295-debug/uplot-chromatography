@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "sideEffects": false,
   "engines": { "node": ">=22.18.0" },
-  "files": ["dist", "README.md", "LICENSE", "LICENSE-MIT", "examples/esm/main.ts"],
+  "files": ["dist", "README.md", "LICENSE", "examples/esm/main.ts"],
   "exports": {
     ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
     "./io": { "types": "./dist/io/index.d.ts", "import": "./dist/io/index.js" },
